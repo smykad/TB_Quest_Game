@@ -6,6 +6,20 @@
         xmlns:local="clr-namespace:TB_Quest_Game.Presentation.Views"
         mc:Ignorable="d"
         Title="GameView" Height="400" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Window.Resources>
+        <Style x:Key="Stats" TargetType="Label">
+            <Setter Property="Background" Value="LightGreen"/>
+            <Setter Property="Margin" Value="0 10 0 10"/>
+            <Setter Property="FontSize" Value="10px"/>
+        </Style>
+        <Style x:Key="Name" TargetType="Label">
+            <Setter Property="Background" Value="Orange"/>
+            <Setter Property="Margin" Value="10 0 10 0"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
     <Grid Margin="5" Background="BlanchedAlmond">
         
         <!--#region Grid Definitions-->
@@ -81,12 +95,44 @@
             
             <!--NPC WINDOW-->
             <Label Content ="NPC WIndow" Foreground="AliceBlue" Grid.Column="2" Grid.Row="0" Grid.RowSpan="2" Background="black"/>
-            <StackPanel Grid.Column="0" Grid.Row="0" Grid.RowSpan="2">
+            <Grid Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="0,0,10,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="35"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
                 <!--Player Stats-->
-                <Label Content="{Binding Player.Health}" Background="LightGreen" Margin="5"/>
-                <Label Content="{Binding Player.Lives}" Background="LightGreen" Margin="5"/>
-                <Label Content="{Binding Player.PlayerClass}" Background="LightGreen" Margin="5"/>
-            </StackPanel>
+
+                <Label Grid.Row="0" Grid.Column="0"
+                       Style="{StaticResource Stats}"
+                       Content="HP: "/>
+
+                <Label Grid.Row="1" Grid.Column="0"
+                       Style="{StaticResource Stats}"
+                       Content="Lives: "/>
+
+                <Label Grid.Row="2" Grid.Column="0"
+                       Style="{StaticResource Stats}"
+                       Content="Class: "/>
+
+                <Label Grid.Row ="0" Grid.Column="1" 
+                       Style="{StaticResource Stats}" 
+                       Content="{Binding Player.Health}"/>
+                
+                <Label Grid.Row ="1" Grid.Column="1" 
+                       Style="{StaticResource Stats}" 
+                       Content="{Binding Player.Lives}"/>
+                
+                <Label Grid.Row ="2" Grid.Column="1" 
+                       Style="{StaticResource Stats}" 
+                       Content="{Binding Player.PlayerClass}"/>
+                
+            </Grid>
         </Grid>
         <!--#endregion-->
         
@@ -100,13 +146,16 @@
                Background="black" 
                Margin="10"/>
         <!--Player Name-->
-        <Label 
-               FontSize="10" 
-               Grid.Column="0" 
-               Grid.Row="2" 
-               Background="Orange" 
-               Margin="10 0 10 25"
-               Content="{Binding Player.Name}"/>
+        <StackPanel Grid.Column="0" Grid.Row="2">
+            <Label
+                Background="DarkOrange"
+                Style="{StaticResource Name}"
+                Content="Name"/>
+            <Label
+                Style="{StaticResource Name}"
+                Content="{Binding Player.Name}"/>
+        </StackPanel>
+        
         <!--#endregion-->
         
         <!--#region Help Save Quit-->
