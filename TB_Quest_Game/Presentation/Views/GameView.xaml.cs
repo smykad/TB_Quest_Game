@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TB_Quest_Game.Presentation.ViewModels;
 
 namespace TB_Quest_Game.Presentation.Views
 {
@@ -19,9 +20,16 @@ namespace TB_Quest_Game.Presentation.Views
     /// </summary>
     public partial class GameView : Window
     {
-        public GameView()
+        GameViewModel _gameViewModel;
+        public GameView(GameViewModel gameViewModel)
         {
+            _gameViewModel = gameViewModel;
             InitializeComponent();
+        }
+
+        private void Quit_Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

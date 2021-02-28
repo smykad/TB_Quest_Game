@@ -8,10 +8,17 @@ namespace TB_Quest_Game.Models
 {
     public class Player: Character
     {
+        #region Enums
+
+        public enum PlayerClassName { Wizard, Warrior, Archer}
+
+        #endregion
+
         #region Properties
 
         public int Lives { get; set; }
         public int ExperiencePoints { get; set; }
+        public PlayerClassName PlayerClass { get; set; }
 
         #endregion
 
@@ -20,14 +27,12 @@ namespace TB_Quest_Game.Models
         {
 
         }
-        public Player(int id, string name, bool isActive, int lives, int experiencePoints)
-            :base(id, name, isActive)
+        public Player(int id, string name, int health, int lives, int experiencePoints, PlayerClassName playerClass)
+            :base(id, name, health)
         {
-            Id = id;
-            Name = name;
-            IsActive = isActive;
             Lives = lives;
             ExperiencePoints = experiencePoints;
+            PlayerClass = playerClass;
         }
         #endregion
 

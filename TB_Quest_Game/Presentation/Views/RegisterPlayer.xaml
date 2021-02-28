@@ -5,8 +5,119 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TB_Quest_Game.Presentation.Views"
         mc:Ignorable="d"
-        Title="RegisterPlayer" Height="450" Width="800">
-    <Grid>
+        Title="RegisterPlayer" Height="450" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Style x:Key="RegisterLabel" TargetType="Label">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="28"/>
+            <Setter Property="Foreground" Value="DarkSlateBlue"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+        <Style x:Key="TextBoxInput" TargetType="TextBox">
+            <Setter Property="Width" Value="275"/>
+            <Setter Property="Height" Value="32"/>
+            <Setter Property="FontSize" Value="20px"/>
+            <Setter Property="Grid.ColumnSpan" Value="2"/>
+        </Style>
+    </Window.Resources>
+    <Grid Background="AntiqueWhite">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
         
+        <!--Title-->
+        <TextBlock
+            Grid.Row="0"
+            Grid.RowSpan="2"
+            Grid.Column="1"
+            Grid.ColumnSpan="3"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            FontSize="40"
+            Foreground="DarkSlateBlue"
+            Text="TB Quest Game">
+        </TextBlock>
+        
+        <!--Name-->
+        <Label
+            Grid.Row="2"
+            Grid.Column="1"
+            Content="Name: "
+            Style="{StaticResource RegisterLabel}">
+        </Label>
+        
+        <!--Name TextBox -->
+        <TextBox
+            Name="PlayerName"
+            Grid.Row="2"
+            Grid.Column="2"
+            Style="{StaticResource TextBoxInput}">
+        </TextBox>
+        
+        <!-- Name error message TextBox -->
+        <TextBlock
+            x:Name="ErrorMessageTextBlock"
+            Grid.Column="1"
+            Grid.Row="3"
+            Grid.ColumnSpan="3"
+            Width="300"
+            Margin="0 15"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            FontSize="14"
+            FontWeight="Bold"
+            Foreground="Red">
+            <Run Text="This is an error"/>
+            <Run Text="message"/>
+
+        </TextBlock>
+
+        <!--Role-->
+        <Label
+            Grid.Row="4"
+            Grid.Column="1"
+            Content="Role: "
+            Style="{StaticResource RegisterLabel}">
+        </Label>
+        
+        <!-- Role ComboBox -->
+        <ComboBox
+            Name="PlayerClassComboBox"
+            Grid.Row="4"
+            Grid.Column="2"
+            Grid.ColumnSpan="2"
+            Width="275"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            FontSize="20px">
+        </ComboBox>
+        
+        <!--Play Button -->
+        <Button
+            Name="Play"
+            Grid.Row="6"
+            Grid.Column="2"
+            Background="AliceBlue"
+            Content="Play Game"
+            FontSize="24"
+            Margin="10"
+            Click="PlayButton_Click">
+        </Button>
+
+
     </Grid>
 </Window>

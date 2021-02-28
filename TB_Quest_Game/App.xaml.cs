@@ -1,5 +1,5 @@
 ﻿using System.Windows;
-using TB_Quest_Game.Presentation.Views;
+using TB_Quest_Game.Business;
 
 namespace TB_Quest_Game
 {
@@ -10,8 +10,7 @@ namespace TB_Quest_Game
     {
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            StartingScreen startingScreen = new StartingScreen();
-            startingScreen.Show();
+            GameBusiness gameBusiness = new GameBusiness();
         }
     }
 }

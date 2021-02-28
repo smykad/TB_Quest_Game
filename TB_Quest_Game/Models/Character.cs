@@ -13,7 +13,7 @@ namespace TB_Quest_Game.Models
 
         public int Id { get; set; }
         public string Name { get; set; }
-        public bool IsActive { get; set; }
+        public int Health { get; set; }
 
         #endregion
 
@@ -23,11 +23,11 @@ namespace TB_Quest_Game.Models
         {
 
         }
-        public Character(int id, string name, bool isActive)
+        public Character(int id, string name, int health)
         {
             Id = id;
             Name = name;
-            IsActive = isActive;
+            Health = health;
         }
 
         #endregion

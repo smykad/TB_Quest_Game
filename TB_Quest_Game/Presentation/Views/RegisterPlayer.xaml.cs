@@ -1,6 +1,8 @@
-﻿using System.Windows;
-using TB_Quest_Game.Presentation.ViewModels;
-
+﻿using TB_Quest_Game.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Windows;
 
 namespace TB_Quest_Game.Presentation.Views
 {
@@ -9,11 +11,64 @@ namespace TB_Quest_Game.Presentation.Views
     /// </summary>
     public partial class RegisterPlayer : Window
     {
-        RegisterViewModel _registerViewModel;
-        public RegisterPlayer(RegisterViewModel registerViewModel)
+
+        #region Fields
+        private Player _player;
+        #endregion
+        public RegisterPlayer(Player player)
         {
-            _registerViewModel = registerViewModel;
+            _player = player;
             InitializeComponent();
+            SetupWindow();
+        }
+
+        private void SetupWindow()
+        {
+            List<string> roles = Enum.GetNames(typeof(Player.PlayerClassName)).ToList();
+            PlayerClassComboBox.ItemsSource = roles;
+
+            ErrorMessageTextBlock.Visibility = Visibility.Hidden;
+        }
+
+        private bool IsValidPlayer(out string errorMessage)
+        {
+            errorMessage = "";
+            if(PlayerName.Text == "")
+            {
+                errorMessage += "Player name is required.";
+            }
+            else if (!PlayerName.Text.All(chr => char.IsLetter(chr)))
+            {
+                errorMessage += "Player name is invalid!";
+            }
+            else
+            {
+                _player.Name = PlayerName.Text;
+            }
+
+            return errorMessage == "" ? true : false;
+        }
+
+        private void PlayButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (!IsValidPlayer(out var errorMessage))
+            {
+                ErrorMessageTextBlock.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                ErrorMessageTextBlock.Visibility = Visibility.Hidden;
+            }
+            if(errorMessage == "")
+            {
+                Enum.TryParse(PlayerClassComboBox.SelectionBoxItem.ToString(), out Player.PlayerClassName playerClass);
+
+                _player.PlayerClass = playerClass;
+                _player.Health = 100;
+                _player.Lives = 3;
+
+                Visibility = Visibility.Hidden;
+            }
         }
     }
 }

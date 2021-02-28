@@ -63,22 +63,16 @@
   <ItemGroup>
     <Compile Include="Business\GameBusiness.cs" />
     <Compile Include="Models\Character.cs" />
-    <Compile Include="Models\FoodAndDrink.cs" />
     <Compile Include="Models\GameObject.cs" />
     <Compile Include="Models\Npc.cs" />
     <Compile Include="Models\Player.cs" />
-    <Compile Include="Models\Weapon.cs" />
     <Compile Include="ObservableObject.cs" />
     <Compile Include="Presentation\ViewModels\GameViewModel.cs" />
-    <Compile Include="Presentation\ViewModels\RegisterViewModel.cs" />
     <Compile Include="Presentation\Views\GameView.xaml.cs">
       <DependentUpon>GameView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Views\RegisterPlayer.xaml.cs">
       <DependentUpon>RegisterPlayer.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Views\StartingScreen.xaml.cs">
-      <DependentUpon>StartingScreen.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -112,10 +106,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Presentation\Views\RegisterPlayer.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Presentation\Views\StartingScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
