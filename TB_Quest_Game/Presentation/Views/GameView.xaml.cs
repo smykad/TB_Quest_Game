@@ -20,16 +20,25 @@ namespace TB_Quest_Game.Presentation.Views
     /// </summary>
     public partial class GameView : Window
     {
+
+        #region Fields
         GameViewModel _gameViewModel;
+        #endregion
+
+        #region Constructors
         public GameView(GameViewModel gameViewModel)
         {
             _gameViewModel = gameViewModel;
             InitializeComponent();
         }
+        #endregion
 
+        #region Methods
         private void Quit_Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
+        #endregion
+
     }
 }

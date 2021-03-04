@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TB_Quest_Game.Presentation.Views"
         mc:Ignorable="d"
-        Title="GameView" Height="400" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="TB Quest Game" Height="400" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Window.Resources>
         <Style x:Key="Stats" TargetType="Label">
             <Setter Property="Background" Value="LightGreen"/>

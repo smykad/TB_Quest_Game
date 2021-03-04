@@ -23,11 +23,10 @@ namespace TB_Quest_Game.Business
         public GameBusiness()
         {
             RegisterPlayer();
-            InstantiateView();
-
+            InstantiateAndShowView();
         }
 
-        private void InstantiateView()
+        private void InstantiateAndShowView()
         {
             _gameViewModel = new GameViewModel(_player);
             GameView gameView = new GameView(_gameViewModel);
@@ -43,7 +42,6 @@ namespace TB_Quest_Game.Business
                 _registerPlayer = new RegisterPlayer(_player);
                 _registerPlayer.ShowDialog();
             }
-           
         }
 
 

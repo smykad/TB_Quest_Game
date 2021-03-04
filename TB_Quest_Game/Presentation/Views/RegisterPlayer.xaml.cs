@@ -15,13 +15,17 @@ namespace TB_Quest_Game.Presentation.Views
         #region Fields
         private Player _player;
         #endregion
+
+        #region Constructors
         public RegisterPlayer(Player player)
         {
             _player = player;
             InitializeComponent();
             SetupWindow();
         }
+        #endregion
 
+        #region Methods        
         private void SetupWindow()
         {
             List<string> roles = Enum.GetNames(typeof(Player.PlayerClassName)).ToList();
@@ -66,9 +70,12 @@ namespace TB_Quest_Game.Presentation.Views
                 _player.PlayerClass = playerClass;
                 _player.Health = 100;
                 _player.Lives = 3;
+                _player.ExperiencePoints = 0;
 
                 Visibility = Visibility.Hidden;
             }
         }
+
+        #endregion
     }
 }
