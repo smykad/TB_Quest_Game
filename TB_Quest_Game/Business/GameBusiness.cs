@@ -44,6 +44,15 @@ namespace TB_Quest_Game.Business
             {
                 _registerPlayer = new RegisterPlayer(_player);
                 _registerPlayer.ShowDialog();
+                _player.Health = 100;
+                _player.Lives = 3;
+                _player.Health = 100;
+                _player.Lives = 3;
+                _player.ExperiencePoints = 0;
+            }
+            else
+            {
+                _player = GameData.PlayerData();
             }
         }
 

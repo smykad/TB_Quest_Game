@@ -68,10 +68,6 @@ namespace TB_Quest_Game.Presentation.Views
                 Enum.TryParse(PlayerClassComboBox.SelectionBoxItem.ToString(), out Player.PlayerClassName playerClass);
 
                 _player.PlayerClass = playerClass;
-                _player.Health = 100;
-                _player.Lives = 3;
-                _player.ExperiencePoints = 0;
-
                 Visibility = Visibility.Hidden;
             }
         }
