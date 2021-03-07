@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TB_Quest_Game.Models;
+﻿using TB_Quest_Game.Models;
 
 namespace TB_Quest_Game.Data
 {
@@ -57,6 +52,7 @@ namespace TB_Quest_Game.Data
             {
                 Id = 4,
                 Name = "2-1"
+
             };
             gameMap.MapLocations[1, 1] = new Location()
             {

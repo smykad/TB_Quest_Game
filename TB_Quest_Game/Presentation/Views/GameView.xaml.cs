@@ -1,5 +1,4 @@
-﻿
-using System.Windows;
+﻿using System.Windows;
 using TB_Quest_Game.Presentation.ViewModels;
 
 namespace TB_Quest_Game.Presentation.Views
@@ -15,6 +14,7 @@ namespace TB_Quest_Game.Presentation.Views
         public GameView(GameViewModel gameViewModel)
         {
             _gameViewModel = gameViewModel;
+            
             InitializeComponent();
         }
         #endregion

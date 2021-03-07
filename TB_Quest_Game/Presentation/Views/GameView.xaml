@@ -3,9 +3,15 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:TB_Quest_Game.Presentation.ViewModels"
         xmlns:local="clr-namespace:TB_Quest_Game.Presentation.Views"
         mc:Ignorable="d"
-        Title="TB Quest Game" Height="400" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="TB Quest Game" 
+        Height="400" 
+        Width="800" 
+        WindowStartupLocation="CenterScreen" 
+        ResizeMode="NoResize">
+
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibility"/>
         <Style x:Key="Stats" TargetType="Label">
@@ -20,6 +26,9 @@
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
         </Style>
+
+            
+
     </Window.Resources>
     <Grid Margin="5" Background="BlanchedAlmond">
         
@@ -69,37 +78,37 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <TextBox 
+            <Label
                 Grid.Row="0"
                 Grid.ColumnSpan="3"
                 Margin="15, 0"
-                Text="{Binding CurrentLocation.Name, Mode=OneWay}"
+                Content="{Binding CurrentLocation.Name, Mode=OneWay}"
                 HorizontalContentAlignment="Center"
-                Background="WhiteSmoke"/>
+                Background="WhiteSmoke" Height="23" VerticalAlignment="Top"/>
             <Button
                 Grid.Row="2"
                 Grid.Column="1"
                 Content="North"
-                
+                Visibility="{Binding HasNorthLocation, Converter={StaticResource BooleanToVisibility}}"
                 Click="NorthTravelButton_Click"/>
             <Button
                 Grid.Row="3"
                 Grid.Column="0"
                 Content="West"
-                
+                Visibility="{Binding HasWestLocation, Converter={StaticResource BooleanToVisibility}}"
                 Click="WestTravelButton_Click"/>
             <Button
                 Grid.Row="3"
                 Grid.Column="2"
                 Content="East"
-                
+                Visibility="{Binding HasEastLocation, Converter={StaticResource BooleanToVisibility}}"
                 Click="EastTravelButton_Click"/>
             <Button
                 Grid.Row="4"
                 Grid.Column="1"
                 Content="South"
-                
-               Click="SouthTravelButton_Click" Height="23" VerticalAlignment="Top" />
+                Visibility="{Binding HasSouthLocation, Converter={StaticResource BooleanToVisibility}}"
+                Click="SouthTravelButton_Click" Height="23" VerticalAlignment="Top" />
 
 
             <TextBox
@@ -128,8 +137,8 @@
         
         <!--#region Movmenet Buttons-->
         <Canvas Grid.Column="1" Grid.Row="4">
-            <Button Content="Movement 1" Width="100" Height="35" Canvas.Right="250"/>
-            <Button Content="Movement 2" Width="100" Height="35" Canvas.Left="250"/>
+            <Button Content="Yes" Width="100" Height="35" Canvas.Right="250"/>
+            <Button Content="No" Width="100" Height="35" Canvas.Left="250"/>
         </Canvas>
         <!--#endregion-->
 
@@ -220,7 +229,7 @@
         
         <!--#region Messages-->
         <Canvas Grid.Column="1" Grid.Row="3" Margin="50 25 15 25" Background="DarkGray">
-            <TextBlock Text="Messages" Foreground="AliceBlue" Margin="0 0 10 0" Background="Gray"/>
+            <TextBlock Text="{Binding CurrentLocation.Message}" Foreground="AliceBlue" Margin="0 0 10 0" Background="Gray"/>
 
         </Canvas>
         <!--#endregion-->

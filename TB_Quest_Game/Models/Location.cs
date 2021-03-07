@@ -6,6 +6,7 @@
 
         private int _id;
         private string _name;
+        private string _message;
 
         #endregion
 
@@ -22,6 +23,11 @@
             set { _name = value; }
         }
 
+        public string Message
+        {
+            get { return _message; }
+            set { _message = value; }
+        }
         #endregion
 
     }
