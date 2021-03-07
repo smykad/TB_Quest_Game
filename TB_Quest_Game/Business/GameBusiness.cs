@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using TB_Quest_Game.Presentation.ViewModels;
 using TB_Quest_Game.Presentation.Views;
 using TB_Quest_Game.Models;
+using TB_Quest_Game.Data;
 
 namespace TB_Quest_Game.Business
 {
@@ -28,10 +29,17 @@ namespace TB_Quest_Game.Business
 
         private void InstantiateAndShowView()
         {
-            _gameViewModel = new GameViewModel(_player);
+            _gameViewModel = new GameViewModel(
+                _player,
+                GameData.GameMap(),
+                GameData.InitialGameMapLocations()
+                );
             GameView gameView = new GameView(_gameViewModel);
+
             gameView.DataContext = _gameViewModel;
+            
             gameView.Show();
+            
             _registerPlayer.Close();
         }
 

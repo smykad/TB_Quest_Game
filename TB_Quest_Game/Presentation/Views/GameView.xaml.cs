@@ -1,23 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using TB_Quest_Game.Presentation.ViewModels;
 
 namespace TB_Quest_Game.Presentation.Views
 {
-    /// <summary>
-    /// Interaction logic for GameView.xaml
-    /// </summary>
     public partial class GameView : Window
     {
 
@@ -40,5 +26,24 @@ namespace TB_Quest_Game.Presentation.Views
         }
         #endregion
 
+        private void WestTravelButton_Click(object sender, RoutedEventArgs e)
+        {
+            _gameViewModel.MoveWest();
+        }
+
+        private void NorthTravelButton_Click(object sender, RoutedEventArgs e)
+        {
+            _gameViewModel.MoveNorth();
+        }
+
+        private void EastTravelButton_Click(object sender, RoutedEventArgs e)
+        {
+            _gameViewModel.MoveEast();
+        }
+
+        private void SouthTravelButton_Click(object sender, RoutedEventArgs e)
+        {
+            _gameViewModel.MoveSouth();
+        }
     }
 }
