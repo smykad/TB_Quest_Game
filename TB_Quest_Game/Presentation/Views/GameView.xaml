@@ -52,15 +52,42 @@
         <!--#region  Map-->
         
         <UniformGrid Grid.Column="3" Grid.RowSpan="3" Margin="5">
-            <Label Background="DarkSlateGray" Margin="3"/>
-            <Label Background="DarkSlateGray" Margin="3"/>
-            <Label Background="DarkSlateGray" Margin="3"/>
-            <Label Background="DarkSlateGray" Margin="3"/>
-            <Label Background="DarkSlateGray" Margin="3"/>
-            <Label Background="DarkSlateGray" Margin="3"/>
-            <Label Background="DarkSlateGray" Margin="3"/>
-            <Label Background="DarkSlateGray" Margin="3"/>
-            <Label Background="DarkSlateGray" Margin="3"/>
+            <Label Content ="3-1" Foreground="AliceBlue" 
+                   HorizontalContentAlignment="Center" 
+                   VerticalContentAlignment="Center" 
+                   Background="DarkSlateGray" Margin="3"/>
+            <Label Content ="3-2" Foreground="AliceBlue" 
+                   HorizontalContentAlignment="Center" 
+                   VerticalContentAlignment="Center" 
+                   Background="DarkSlateGray" Margin="3"/>
+            <Label Content ="3-3" Foreground="AliceBlue" 
+                   HorizontalContentAlignment="Center" 
+                   VerticalContentAlignment="Center" 
+                   Background="DarkSlateGray" Margin="3"/>
+            <Label Content ="2-1" Foreground="AliceBlue" 
+                   HorizontalContentAlignment="Center" 
+                   VerticalContentAlignment="Center"  
+                   Background="DarkSlateGray" Margin="3"/>
+            <Label Content ="2-2" Foreground="AliceBlue" 
+                   HorizontalContentAlignment="Center" 
+                   VerticalContentAlignment="Center" 
+                   Background="DarkSlateGray" Margin="3"/>
+            <Label Content ="2-3" Foreground="AliceBlue" 
+                   HorizontalContentAlignment="Center" 
+                   VerticalContentAlignment="Center" 
+                   Background="DarkSlateGray" Margin="3"/>
+            <Label Content ="1-1" Foreground="AliceBlue" 
+                   HorizontalContentAlignment="Center" 
+                   VerticalContentAlignment="Center" 
+                   Background="DarkSlateGray" Margin="3"/>
+            <Label Content ="1-2" Foreground="AliceBlue" 
+                   HorizontalContentAlignment="Center" 
+                   VerticalContentAlignment="Center" 
+                   Background="DarkSlateGray" Margin="3"/>
+            <Label Content ="1-3" Foreground="AliceBlue" 
+                   HorizontalContentAlignment="Center" 
+                   VerticalContentAlignment="Center" 
+                   Background="DarkSlateGray" Margin="3"/>
         </UniformGrid>
         <!--#endregion-->
         
@@ -84,7 +111,7 @@
                 Grid.Row="0"
                 Grid.ColumnSpan="3"
                 Margin="15, 0"
-                Content="{Binding LocationDisplay, Mode=OneWay}"
+                Content="{Binding CurrentLocation.Name, Mode=OneWay}"
                 HorizontalContentAlignment="Center"
                 Background="WhiteSmoke" Height="23" VerticalAlignment="Top"/>
             <Button
