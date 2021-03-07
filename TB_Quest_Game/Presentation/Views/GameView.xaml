@@ -11,7 +11,9 @@
         Width="800" 
         WindowStartupLocation="CenterScreen" 
         ResizeMode="NoResize">
-
+    <Window.DataContext>
+        <vm:GameViewModel/>
+    </Window.DataContext>
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibility"/>
         <Style x:Key="Stats" TargetType="Label">
@@ -82,7 +84,7 @@
                 Grid.Row="0"
                 Grid.ColumnSpan="3"
                 Margin="15, 0"
-                Content="{Binding CurrentLocation.Name, Mode=OneWay}"
+                Content="{Binding LocationDisplay, Mode=OneWay}"
                 HorizontalContentAlignment="Center"
                 Background="WhiteSmoke" Height="23" VerticalAlignment="Top"/>
             <Button

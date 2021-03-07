@@ -35,8 +35,12 @@ namespace TB_Quest_Game.Presentation.ViewModels
                 _currentLocation = value;
                 OnPropertyChanged(nameof(CurrentLocation));
             }
-          
         }
+        public string MessageDisplay
+        {
+            get { return _currentLocation.Message; }
+        }
+
 
         public Location NorthLocation
         {
@@ -168,11 +172,17 @@ namespace TB_Quest_Game.Presentation.ViewModels
                 
             }
         }
+
+        private void OnPlayerMove()
+        {
+            OnPropertyChanged(nameof(MessageDisplay));
+        }
         public void MoveNorth()
         {
             _gameMap.MoveNorth();
             CurrentLocation = _gameMap.CurrentLocation;
             UpdateAvailableTravelPoints();
+            OnPlayerMove();
         }
 
         public void MoveEast()
@@ -180,6 +190,7 @@ namespace TB_Quest_Game.Presentation.ViewModels
             _gameMap.MoveEast();
                 CurrentLocation = _gameMap.CurrentLocation;
             UpdateAvailableTravelPoints();
+            OnPlayerMove();
         }
 
         public void MoveSouth()
@@ -187,12 +198,14 @@ namespace TB_Quest_Game.Presentation.ViewModels
             _gameMap.MoveSouth();
             CurrentLocation = _gameMap.CurrentLocation;
             UpdateAvailableTravelPoints();
+            OnPlayerMove();
         }
         public void MoveWest()
         {   
             _gameMap.MoveWest();
             CurrentLocation = _gameMap.CurrentLocation;
             UpdateAvailableTravelPoints();
+            OnPlayerMove();
         }
         #endregion
     }

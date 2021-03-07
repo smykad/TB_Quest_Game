@@ -13,8 +13,7 @@ namespace TB_Quest_Game.Data
                 PlayerClass = Player.PlayerClassName.Warrior,
                 Health = 100,
                 Lives = 3,
-                ExperiencePoints = 0,
-                LocationId = 0
+                ExperiencePoints = 0
             };
         }
 
@@ -34,24 +33,28 @@ namespace TB_Quest_Game.Data
             gameMap.MapLocations[2, 0] = new Location()
             {
                 Id = 1,
-                Name = "1-1"
+                Name = "1-1",
+                Message = "Welcome to my dungeon"
             };
             gameMap.MapLocations[2, 1] = new Location()
             {
                 Id = 2,
-                Name = "1-2"
+                Name = "1-2",
+                Message = "yay"
             };
             gameMap.MapLocations[2, 2] = new Location()
             {
                 Id = 3,
-                Name = "1-3"
+                Name = "1-3",
+                Message = "boo"
             };
 
             // row 2
             gameMap.MapLocations[1, 0] = new Location()
             {
                 Id = 4,
-                Name = "2-1"
+                Name = "2-1",
+                Message = ":("
 
             };
             gameMap.MapLocations[1, 1] = new Location()

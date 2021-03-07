@@ -11,7 +11,6 @@ namespace TB_Quest_Game.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public int Health { get; set; }
-        public int LocationId { get; set; }
 
         #endregion
 
