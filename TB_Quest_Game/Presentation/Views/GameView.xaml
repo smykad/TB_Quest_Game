@@ -51,7 +51,7 @@
         
         <!--#region  Map-->
         
-        <UniformGrid Grid.Column="3" Grid.RowSpan="3" Margin="5">
+        <UniformGrid Grid.Column="2" Grid.RowSpan="3" Margin="5">
             <Label Content ="3-1" Foreground="AliceBlue" 
                    HorizontalContentAlignment="Center" 
                    VerticalContentAlignment="Center" 
@@ -92,7 +92,7 @@
         <!--#endregion-->
         
         <!--#region inventory-->
-        <Grid Grid.Column="3" Grid.Row="3">
+        <Grid Grid.Column="2" Grid.Row="3">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>

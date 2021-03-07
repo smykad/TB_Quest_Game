@@ -202,8 +202,6 @@ namespace TB_Quest_Game.Presentation.ViewModels
         {   
             _gameMap.MoveWest();
             CurrentLocation = _gameMap.CurrentLocation;
-            string bob = CurrentLocation.Name;
-            CurrentLocation.Name = bob;
             UpdateAvailableTravelPoints();
             OnPlayerMove();
         }
