@@ -11,6 +11,8 @@ namespace TB_Quest_Game.Business
 
         GameViewModel _gameViewModel;
         Player _player = new Player();
+        Map _gameMap;
+        GameMapCoordinates _initializeMapCoordinates;
         bool _newPlayer = true;
         RegisterPlayer _registerPlayer;
 
@@ -19,15 +21,20 @@ namespace TB_Quest_Game.Business
         public GameBusiness()
         {
             RegisterPlayer();
+            InitializeDataSet();
             InstantiateAndShowView();
         }
-
+        private void InitializeDataSet()
+        {
+            _gameMap = GameData.GameMap();
+            _initializeMapCoordinates = GameData.InitialGameMapLocations();
+        }
         private void InstantiateAndShowView()
         {
             _gameViewModel = new GameViewModel(
                 _player,
-                GameData.GameMap(),
-                GameData.InitialGameMapLocations()
+                _gameMap,
+                _initializeMapCoordinates
                 );
             GameView gameView = new GameView(_gameViewModel);
 

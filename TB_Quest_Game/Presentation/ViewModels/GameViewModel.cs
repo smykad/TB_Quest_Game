@@ -100,16 +100,12 @@ namespace TB_Quest_Game.Presentation.ViewModels
         }
         
 
-        public GameViewModel(
-            Player player,
-            Map gameMap,
-            GameMapCoordinates currentLocationCoordinates)
+        public GameViewModel(Player player, Map gameMap, GameMapCoordinates currentLocationCoordinates)
         {
             Player = player;
             _gameMap = gameMap;
-            
             _gameMap.CurrentLocationCoordinates = currentLocationCoordinates;
-            CurrentLocation = _gameMap.CurrentLocation;
+            _currentLocation = _gameMap.CurrentLocation;
             MessageBox.Show($"Welcome to the game {player.Name} you are currently in {CurrentLocation.Name}");
             UpdateAvailableTravelPoints();
         }
@@ -190,7 +186,7 @@ namespace TB_Quest_Game.Presentation.ViewModels
         public void MoveEast()
         {
             _gameMap.MoveEast();
-                CurrentLocation = _gameMap.CurrentLocation;
+            CurrentLocation = _gameMap.CurrentLocation;
             UpdateAvailableTravelPoints();
             OnPlayerMove();
         }
@@ -206,6 +202,8 @@ namespace TB_Quest_Game.Presentation.ViewModels
         {   
             _gameMap.MoveWest();
             CurrentLocation = _gameMap.CurrentLocation;
+            string bob = CurrentLocation.Name;
+            CurrentLocation.Name = bob;
             UpdateAvailableTravelPoints();
             OnPlayerMove();
         }
