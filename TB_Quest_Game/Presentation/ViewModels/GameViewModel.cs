@@ -110,6 +110,7 @@ namespace TB_Quest_Game.Presentation.ViewModels
             
             _gameMap.CurrentLocationCoordinates = currentLocationCoordinates;
             CurrentLocation = _gameMap.CurrentLocation;
+            MessageBox.Show($"Welcome to the game {player.Name} you are currently in {CurrentLocation.Name}");
             UpdateAvailableTravelPoints();
         }
         #endregion
@@ -175,7 +176,7 @@ namespace TB_Quest_Game.Presentation.ViewModels
 
         private void OnPlayerMove()
         {
-            OnPropertyChanged(nameof(MessageDisplay));
+            MessageBox.Show($"Current location is: {CurrentLocation.Name}");
         }
         public void MoveNorth()
         {
@@ -183,6 +184,7 @@ namespace TB_Quest_Game.Presentation.ViewModels
             CurrentLocation = _gameMap.CurrentLocation;
             UpdateAvailableTravelPoints();
             OnPlayerMove();
+            
         }
 
         public void MoveEast()

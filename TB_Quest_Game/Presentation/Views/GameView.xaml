@@ -91,25 +91,25 @@
                 Grid.Row="2"
                 Grid.Column="1"
                 Content="North"
-                Visibility="{Binding HasNorthLocation, Converter={StaticResource BooleanToVisibility}}"
+                
                 Click="NorthTravelButton_Click"/>
             <Button
                 Grid.Row="3"
                 Grid.Column="0"
                 Content="West"
-                Visibility="{Binding HasWestLocation, Converter={StaticResource BooleanToVisibility}}"
+                
                 Click="WestTravelButton_Click"/>
             <Button
                 Grid.Row="3"
                 Grid.Column="2"
                 Content="East"
-                Visibility="{Binding HasEastLocation, Converter={StaticResource BooleanToVisibility}}"
+                
                 Click="EastTravelButton_Click"/>
             <Button
                 Grid.Row="4"
                 Grid.Column="1"
                 Content="South"
-                Visibility="{Binding HasSouthLocation, Converter={StaticResource BooleanToVisibility}}"
+                
                 Click="SouthTravelButton_Click" Height="23" VerticalAlignment="Top" />
 
 
